@@ -4,5 +4,6 @@
 
 void PrintMessage(const char* const message)
 {
-	printf("%s\n", message);
+    printf("%s\n", message);
 }
+

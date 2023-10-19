@@ -17,18 +17,19 @@ Result: an empty file named text.txt should be creates
 
 int main (void)
 {
-	int fdesc;
-	mode_t modes = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP;
-	fdesc = creat("text.txt", modes);
+    int fdesc;
+    mode_t modes = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP;
+    fdesc = creat("text.txt", modes);
 
-	if (fdesc == -1)
-	{
-		fprintf(stderr, "Can't create file\n");
-		return 1;
-	}
+    if (fdesc == -1)
+    {
+        fprintf(stderr, "Can't create file\n");
+        return 1;
+    }
     printf("File created\n");
 
-	close(fdesc);
-	return 0;
+    close(fdesc);
+
+    return 0;
 }
 

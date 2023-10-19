@@ -13,22 +13,24 @@ gcc test.c -o test
 
 int main (void)
 {
-	int fd;
-	char c;
+    int fd;
+    char c;
 
-	fd = open("text.txt", O_RDONLY);
+    fd = open("text.txt", O_RDONLY);
 
-	if (fd == -1)
-	{
-		fprintf(stderr, "Can't open file\n");
-		return 1;
-	}
+    if (fd == -1)
+    {
+        fprintf(stderr, "Can't open file\n");
+        return 1;
+    }
 
-	while (read (fd, &c, 1) > 0)
-	{
-		printf("%c", c);
-	}
+    while (read (fd, &c, 1) > 0)
+    {
+        printf("%c", c);
+    }
 
-	close(fd);
-	return 0;
+    close(fd);
+
+    return 0;
 } 
+

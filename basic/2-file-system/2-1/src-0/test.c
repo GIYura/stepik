@@ -11,10 +11,10 @@ gcc test.c -o test
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (int argc, char * argv[])
+int main (int argc, char* argv[])
 {
-	FILE *fp;
-	int ch;
+    FILE *fp;
+    int ch;
 
     if (argc != 2)
     {
@@ -22,18 +22,19 @@ int main (int argc, char * argv[])
         exit(1);
     }
 
-	if ((fp = fopen(argv[1], "r")) == NULL)
-	{
-		printf("Can't open file\n");
-		exit(1);
-	}
+    if ((fp = fopen(argv[1], "r")) == NULL)
+    {
+        printf("Can't open file\n");
+        exit(1);
+    }
 
-	while ((ch = fgetc(fp)) != EOF) 
-	{
-		printf("%c", (char)ch);
-	}
-	
-	fclose(fp);
+    while ((ch = fgetc(fp)) != EOF) 
+    {
+        printf("%c", (char)ch);
+    }
+
+    fclose(fp);
+
 	return 0;
 }
 

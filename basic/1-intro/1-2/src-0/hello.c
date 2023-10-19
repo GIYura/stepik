@@ -2,16 +2,18 @@
 #include <stdio.h>
 #include "print.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-	printf("VALUE = [%d]\n", VALUE);
+    printf("TEST_VALUE = [%d]\n", TEST_VALUE);
 
-	int counter = 0;
-	while(1)
-	{
-		counter++;
-		PrintMessage("Hello World!");
-		sleep(1);
-	}
-	return 0;
+    int counter = 0;
+    while(1)
+    {
+        counter++;
+        PrintMessage("Hello World!");
+        sleep(1);
+    }
+
+    return 0;
 }
+

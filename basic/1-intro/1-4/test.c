@@ -1,22 +1,34 @@
+/*
+USAGE:
+
+1. Compile
+gcc test.c -o test
+
+2. Run
+./test
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(int argc, char* argv[])
 {
-	char* value = (char*)getenv("USER");	
-	printf("USER = %s\r\n", value);
+    char* value = (char*)getenv("USER");	
 
-	value = getenv("HOME");
-	printf("HOME = %s\r\n", value);
+    printf("USER = %s\r\n", value);
 
-	value = getenv("PATH");
-	printf("PATH = %s\r\n", value);
+    value = getenv("HOME");
+    printf("HOME = %s\r\n", value);
 
-	putenv("DIR=/etc");
-	setenv ("DIR", "/home/den", 1);
-	value = (char*) getenv("DIR");
-	printf("DIR = %s\n", value);
-	unsetenv("DIR");
+    value = getenv("PATH");
+    printf("PATH = %s\r\n", value);
 
-	return 0;
+    putenv("DIR=/etc");
+    setenv ("DIR", "/home/den", 1);
+    value = (char*) getenv("DIR");
+    printf("DIR = %s\n", value);
+    unsetenv("DIR");
+
+    return 0;
 }
+
