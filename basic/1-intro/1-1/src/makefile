@@ -4,18 +4,21 @@ CFLAGS = -std=c99 -c -g -O0 -MD -Wall
 LDFLAGS = 
 SRC = $(wildcard *.c)
 OBJ = $(addsuffix .o, $(basename $(SRC)))
-TARGET = hello
+TARGET = test
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(LDFLAGS) $^ -o $@
+	@$(CC) $(LDFLAGS) $^ -o $@
+	@echo 'Done!'
 
-%.o: %.c 
-	$(CC) $(CFLAGS) $< -o $@
+%.o: %.c
+	@$(CC) $(CFLAGS) $< -o $@
 
 include $(wildcard *.d)
 
 clean:
-	$(RM) *.o *.d
-	$(RM) $(TARGET)
+	@$(RM) *.o *.d
+	@$(RM) $(TARGET)
+	@echo 'Cleaning ... Done!'
+
