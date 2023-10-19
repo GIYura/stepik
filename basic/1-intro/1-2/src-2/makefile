@@ -15,5 +15,5 @@ obj2.o: obj2.c
 	$(CC) -fPIC -c $^
 
 clean:
-	@$(RM) *.so *.o
+	@$(RM) $(TARGET) *.so *.o
 	@echo 'Cleaning ... Done'
