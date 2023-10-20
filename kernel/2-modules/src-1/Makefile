@@ -1,4 +1,4 @@
-obj-m += chrdev.o
+obj-m += test.o
 
 KERNEL_VERSION := $(shell uname -r)
 
@@ -11,9 +11,9 @@ clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
 load:
-	sudo insmod chrdev.ko
+	sudo insmod test.ko
 	sudo dmesg -c
 
 unload:
-	sudo rmmod chrdev.ko
+	sudo rmmod test.ko
 	sudo dmesg -c

@@ -1,3 +1,5 @@
+#### Общая информация
+
 Для разработки модулей ядра Linux необходимо установить:
 - build-essential (gcc/make/gdb ...);
 - vim;
@@ -19,3 +21,4 @@ apt-get install build-essential vim git libncurses5-dev bc
 - tldp.org
 - https://elixir.bootlin.com/linux/latest/source
 - linuxdriverproject.org
+
