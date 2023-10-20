@@ -4,33 +4,34 @@
 
 #define MAX_STR 5
 
-int main()
+int main(int argc, char* argv[])
 {
-	FILE* pipe_fp;
-	const char* fruits[MAX_STR] = { "pear", "banana", "orange", "plum", "apple" };
+    FILE* pipe_fp;
+    const char* fruits[MAX_STR] = { "pear", "banana", "orange", "plum", "apple" };
 
-	printf("--- List before sort:\n");
+    printf("--- List before sort:\n");
 
-	for (int i = 0; i < MAX_STR; i++)
-	{
-		printf("%s\n", fruits[i]);
-	}
+    for (int i = 0; i < MAX_STR; i++)
+    {
+        printf("%s\n", fruits[i]);
+    }
 
-	if ((pipe_fp = popen("sort", "w")) == NULL)
-	{
-		perror("popen failed\n");
-		exit (1);
-	}
+    if ((pipe_fp = popen("sort", "w")) == NULL)
+    {
+        perror("popen failed\n");
+        exit (1);
+    }
 	
-	printf("--- List after sort:\n");
+    printf("--- List after sort:\n");
 
-	for (int i = 0; i < MAX_STR; i++)
-	{
-		fputs(fruits[i], pipe_fp);
-		fputc('\n', pipe_fp);
-	}
+    for (int i = 0; i < MAX_STR; i++)
+    {
+        fputs(fruits[i], pipe_fp);
+        fputc('\n', pipe_fp);
+    }
 
-	pclose(pipe_fp);
+    pclose(pipe_fp);
 
-	return 0;
+    return 0;
 }
+
