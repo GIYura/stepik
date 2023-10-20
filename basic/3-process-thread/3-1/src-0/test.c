@@ -21,7 +21,7 @@ int main (int argc, char* argv[])
         printf("Я родительский процесс, PID = %d\n", getpid());
     }
     
-    sleep (10);
+    sleep (1);
 
     return 0;
 }
